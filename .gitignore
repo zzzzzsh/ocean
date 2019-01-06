@@ -1,0 +1,6 @@
+/Debug
+/Release
+/.vs
+/ocean/Debug
+/ocean/Release
+*.db
