@@ -4,3 +4,5 @@
 /ocean/Debug
 /ocean/Release
 *.db
+/x64
+/ocean/x64
