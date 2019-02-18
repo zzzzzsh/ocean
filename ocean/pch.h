@@ -8,10 +8,13 @@
 
 #ifndef PCH_H
 #define PCH_H
+
+#include <stdint.h>
 #include <GL/glew.h>
 #include <GL/freeglut.h>
 #include <vector>
 #include <string>
+
 
 // TODO: add headers that you want to pre-compile here
 

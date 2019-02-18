@@ -27,6 +27,12 @@
     <ClInclude Include="RenderShader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="WaterFFT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Complex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -39,6 +45,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="RenderInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Complex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WaterFFT.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

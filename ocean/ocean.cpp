@@ -8,6 +8,10 @@
 #include "Shader.h"
 #include "RenderShader.h"
 
+#include <time.h>
+
+#include "WaterFFT.h"
+
 RenderInterface* RenderPointer = nullptr;
 
 static void DisplayFunc() {
@@ -15,26 +19,26 @@ static void DisplayFunc() {
 		return;
 	}
 
-	RenderPointer->render();
+	while (true) {
+		RenderPointer->render();
+	}
+}
 
+static void test() {
+	WaterFFT fft(256, 256, 5, true);
+	fft.UseIntensityMap("intensity2.png");
+
+	while (true){
+		fft.Update(clock());
+		fft.SwapBuffers();
+		std::cout << "Location 0, 0 " << fft.HeightAtLocation({ 15054,0 }) << std::endl;
+	}
 }
 
 int main(int argc, char** argv)
 {
-	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
-	glutInitWindowSize(1024, 768);
-	glutInitWindowPosition(10, 10);
-	glutCreateWindow("ocean");
-	auto GlewInitRes = glewInit();
-	glViewport(0, 0, 1024, 768);
+	test();
 	
-
-	RenderShader Render("./shader.vs", "./shader.frag");
-	RenderPointer = &Render;
-	glutDisplayFunc(DisplayFunc);
-
-	glutMainLoop();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
